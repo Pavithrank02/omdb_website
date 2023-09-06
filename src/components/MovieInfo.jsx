@@ -4,10 +4,10 @@ import useMovieInfo from '../hooks/useMovieInfo'
 
 const MovieInfo = () => {
   const movieInfo = useSelector((store) => store.movie?.movieInfo)
-  console.log(movieInfo?.Title)
+  // console.log(movieInfo?.Title)
   useMovieInfo()
   return (
-    <div className='text-white mt-5 ml-36 cursor-pointer hover:opacity-70 flex flex-row justify-evenly'>
+    <div className='text-white mt-5 ml-36  flex flex-row justify-evenly'>
       <div >
         <img
           className='w-96 '

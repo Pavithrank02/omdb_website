@@ -14,7 +14,7 @@ const useMovieInfo = () => {
   const getAPI = async() => {
     const data = await fetch(OMDB_MOVIEINFO_API)
     const json = await data.json()
-    console.log(json)
+    // console.log(json)
     dispatch(addMovieInfo(json))
   }
   

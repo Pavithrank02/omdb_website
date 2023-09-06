@@ -1,12 +1,27 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import Header from './Header'
 import MoviesList from './MoviesList'
+import SearchSuggestion from './SearchSuggestion'
+import SecondaryContainer from './SecondaryContainer'
 
 const Home = () => {
+  const showSearch = useSelector(store => store.config.showSearch)
   return (
-    <div className='flex flex-col justify-center'>
+    <div className='flex flex-col bg-black '>
       <Header />
-      <MoviesList />
+      {showSearch ?
+        <>
+          <SecondaryContainer />
+
+        </>
+        :
+        <>
+          <SearchSuggestion />
+          <SecondaryContainer />
+        </>
+      }
+
     </div>
   )
 }

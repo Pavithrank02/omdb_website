@@ -36,15 +36,14 @@ export default function Modal() {
                   </button>
                 </div>
                 {/*body*/}
+
                 <div className="relative p-12  flex-auto">
-           
-                  <input
-                    useRef= {searchText}
-                    className="w-96 h-36"
-                    type="text"
-                    rows="4" cols="50"
-                    placeholder="  Comments..."
-                  />
+                    <input
+                      ref={searchText}
+                      className="w-96 h-36"
+                      type="text"
+                      placeholder="  Comments..."
+                    />
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
@@ -58,7 +57,7 @@ export default function Modal() {
                   <button
                     className="bg-green-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    // onClick={handleData}
                   >
                     Save Changes
                   </button>

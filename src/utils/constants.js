@@ -1,4 +1,4 @@
-const API_KEY="aefd74f7"
+export const API_KEY="aefd74f7"
 
 export const OMDB_API = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&`
 
