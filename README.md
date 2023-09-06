@@ -6,6 +6,11 @@
  - header component created
  - redux and redux toolkit configured
  - redux store is created
+ - movie card component created
+ - movie info is displayed
+ - movie list is prepared and displayed
+ - langauge suggestion is provided in search
+ - 
 
 # Features
 
