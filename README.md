@@ -1,6 +1,6 @@
 # Features
 
--Header
+- Header
   - Search bar for searching movies
   - WatchList
 
