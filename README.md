@@ -1,3 +1,9 @@
+# IMDB_Website
+ - npx create-react-app done
+ - initial project setup performed
+ - Tailwind css configured
+ - react router dom configured
+
 # Features
 
 - Header
