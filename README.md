@@ -1,3 +1,27 @@
+# IMDB_Website
+ - npx create-react-app done
+ - initial project setup performed
+ - Tailwind css configured
+ - react router dom configured
+ - header component created
+ - redux and redux toolkit configured
+ - redux store is created
+ - constants file created for storing API
+ - movieSlice is created
+ - langauge slice is created
+ - movie card component created
+ - useMovieAPI custom hook is created
+ - useMovieInfo custom hook is created
+ - movie info is displayed
+ - movie list is prepared and displayed
+ - langauge suggestion is provided in search
+ - modal created
+ - add to favorites is created
+ - search suggestion API called
+ - movie suggestion added
+ - secondary container created
+ - 
+
 # Features
 
 - Header
