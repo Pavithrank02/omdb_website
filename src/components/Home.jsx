@@ -1,10 +1,12 @@
 import React from 'react'
 import Header from './Header'
+import MoviesList from './MoviesList'
 
 const Home = () => {
   return (
-    <div>
+    <div className='flex flex-col justify-center'>
       <Header />
+      <MoviesList />
     </div>
   )
 }

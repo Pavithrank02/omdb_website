@@ -3,6 +3,9 @@
  - initial project setup performed
  - Tailwind css configured
  - react router dom configured
+ - header component created
+ - redux and redux toolkit configured
+ - redux store is created
 
 # Features
 
