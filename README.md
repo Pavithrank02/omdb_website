@@ -20,7 +20,10 @@
  - search suggestion API called
  - movie suggestion added
  - secondary container created
- - 
+ - react-rating configured
+ - rating UI completed
+ - comment box created
+ - favorites UI completed
 
 # Features
 
