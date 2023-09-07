@@ -24,6 +24,10 @@
  - rating UI completed
  - comment box created
  - favorites UI completed
+ - add favorites data in redux
+ - favorites logic is completed
+ - movie details page added
+ - useMovieID is used for movie details
 
 # Features
 

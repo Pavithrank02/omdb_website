@@ -1,14 +1,27 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Rating from "react-rating";
 import img1 from '../assets/images/star-empty.png'
 import img2 from '../assets/images/star-full.png'
+import { useDispatch } from "react-redux";
+import { addFavorites } from "../utils/favoriteSlice";
 
-export default function Modal() {
+export default function Modal({id}) {
+  const dispatch = useDispatch()
+  const [value, setValue] = useState("")
   const [showModal, setShowModal] = React.useState(false);
   const searchText = useRef(null)
-  const handleValue = (value) => {
-    console.log("dd", value)
-  }
+
+  const handleData = () => {
+    dispatch(addFavorites({ ratings: value, comments: searchText.current.value, id: id}))
+    alert("added to watch list")
+    setShowModal(false)
+   }
+
+   const handleClick = (value) => {
+    console.log(value)
+    setValue(value)
+    
+   }
   return (
     <>
       <button
@@ -52,7 +65,7 @@ export default function Modal() {
                         className="flex flex-row mt-3"
                         emptySymbol={<img src={img1} className="h-8 w-8" />}
                         fullSymbol={<img src={img2} className="icon" />}
-                        onClick={handleValue}
+                        onChange={handleClick}
                       />
                     </div>
                     <p className="font-bold text-xl">Comments</p>
@@ -75,7 +88,7 @@ export default function Modal() {
                     <button
                       className="bg-green-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                       type="button"
-                    // onClick={handleData}
+                      onClick={handleData}
                     >
                       Save Changes
                     </button>
