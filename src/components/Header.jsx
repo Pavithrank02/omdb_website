@@ -4,11 +4,12 @@ import lang from '../utils/languageConstant'
 import { API_KEY, SUPPORTED_LANGUAGES } from '../utils/constants'
 import { changeLanguage, toggleSearch } from '../utils/configSlice'
 import { addMovieSuggestion } from '../utils/movieSlice'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Header = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const searchText = useRef(null)
   const langKey = useSelector((store) => store.config.lang)
 
@@ -28,11 +29,12 @@ const Header = () => {
   return (
     <div className=' bg-black '>
       <form className='flex flex-row justify-center' onSubmit={(e) => e.preventDefault()}>
-        <p
-          className='p-2 m-2  bg-yellow-500 w-16 rounded-md text-xl font-bold'
+        <button
+          className='p-2 m-2  bg-yellow-500 w-16 rounded-md text-xl font-bold cursor-pointer'
+          onClick={() => navigate('/')}
         >
           IMDB
-        </p>
+        </button>
 
         <input
           ref={searchText}
