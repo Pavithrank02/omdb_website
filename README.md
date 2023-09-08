@@ -48,6 +48,7 @@
 - Header
   - Search bar for searching movies
   - WatchList
+  - Select Language 
 
 - Home Page
   - List of movies
