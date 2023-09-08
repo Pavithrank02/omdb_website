@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { API_KEY} from '../utils/constants'
 import { addMovieDetails } from '../utils/movieSlice'
@@ -12,7 +12,7 @@ const useMovieID = ({ id }) => {
   }, [])
 
   const getAPI = async () => {
-    const data = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${arr}`)
+    const data = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${arr}`)
     const json = await data.json()
     dispatch(addMovieDetails(json))
   }
