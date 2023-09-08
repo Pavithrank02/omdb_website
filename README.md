@@ -1,3 +1,12 @@
+# Deployment 
+
+- Open Github link
+- copy code
+- open code in VsCode
+- Install Packages
+  - 'npm install' to install dependencies
+  - 'npm run start' to start project
+  - 'npm run build' to build production
 # IMDB_Website
  - npx create-react-app done
  - initial project setup performed
