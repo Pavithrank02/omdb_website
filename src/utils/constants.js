@@ -11,3 +11,4 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hindi", name: "Hindi" },
   { identifier: "spanish", name: "Spanish" },
 ];
+export const OMDB_MOVIEID_API = `http://www.omdbapi.com/?apikey=${API_KEY}&?i=`

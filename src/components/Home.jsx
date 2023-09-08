@@ -8,7 +8,7 @@ import SecondaryContainer from './SecondaryContainer'
 const Home = () => {
   const showSearch = useSelector(store => store.config.showSearch)
   return (
-    <div className='flex flex-col bg-black '>
+    <div className='flex flex-col bg-black h-screen '>
       <Header />
       {showSearch ?
         <>

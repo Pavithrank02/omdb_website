@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import MoviesList from './MoviesList'
-import MovieCard from './MovieCard'
+
 
 
 const SearchSuggestion = () => {

@@ -1,18 +1,52 @@
-import React, { useRef } from "react";
-var Rating = require('react-rating');
+import React, { useRef, useState } from "react";
+import Rating from "react-rating";
+import img1 from '../assets/images/star-empty.png'
+import img2 from '../assets/images/star-full.png'
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorites, removeFavorites } from "../utils/favoriteSlice";
 
-export default function Modal() {
+export default function Modal({ id }) {
+  const dispatch = useDispatch()
+  const watch = useSelector((store) => store.favorite.favourite)
+  console.log(watch)
+  const list = watch.find(info => info.id == id)
+  const [value, setValue] = useState("")
   const [showModal, setShowModal] = React.useState(false);
   const searchText = useRef(null)
+
+  const handleData = () => {
+    dispatch(addFavorites({ ratings: value, comments: searchText.current.value, id: id }))
+    alert("added to watch list")
+    setShowModal(false)
+
+  }
+
+
+
+  const handleClick = (value) => {
+    setValue(value)
+
+  }
   return (
     <>
-      <button
-        className="bg-yellow-500 text-black active:bg-yellow-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        type="button"
-        onClick={() => setShowModal(true)}
-      >
-        Add To Favorites⭐
-      </button>
+      {list? <button
+            className="bg-red-500 text-black active:bg-yellow-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            type="button"
+            onClick={
+              () => dispatch(removeFavorites(id))
+            }
+          >
+            Remove from Favorites⭐
+          </button> :
+          <button
+          className="bg-yellow-500 text-black active:bg-yellow-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+          onClick={
+            () => setShowModal(true)
+          }
+        >
+          Add to Favorites⭐
+        </button>}
       {showModal ? (
         <>
           <div
@@ -36,32 +70,46 @@ export default function Modal() {
                   </button>
                 </div>
                 {/*body*/}
+                <form>
 
-                <div className="relative p-12  flex-auto">
+                  <div className="relative p-6  flex-auto text-black">
+                    <div className="mb-12">
+                      <p className="font-bold text-2xl">Rating</p>
+                      <Rating
+                        start={0}
+                        stop={10}
+                        className="flex flex-row mt-3"
+                        emptySymbol={<img src={img1} className="h-8 w-8" />}
+                        fullSymbol={<img src={img2} className="icon" />}
+                        onChange={handleClick}
+                      />
+                    </div>
+                    <p className="font-bold text-xl">Comments</p>
                     <input
                       ref={searchText}
-                      className="w-96 h-36"
+                      className="w-96 h-36 text-black border border-black"
                       type="text"
                       placeholder="  Comments..."
                     />
-                </div>
-                {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Close
-                  </button>
-                  <button
-                    className="bg-green-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    // onClick={handleData}
-                  >
-                    Save Changes
-                  </button>
-                </div>
+                  </div>
+                  {/*footer*/}
+                  <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                    <button
+                      className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      type="button"
+                      onClick={() => setShowModal(false)}
+                    >
+                      Close
+                    </button>
+                    <button
+                      className="bg-green-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      type="button"
+                      onClick={handleData}
+                    >
+                      Save Changes
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
