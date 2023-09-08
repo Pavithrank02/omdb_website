@@ -26,8 +26,8 @@ const MovieDetails = () => {
           </div>
           <div>
             <div>
-              <p className='text-white md:text-2xl ml-1'> Popularity</p>
-              <p className='text-white md:text-lg ml-1'> {movieDetails?.imdbRating}⭐ : {movieDetails?.imdbVotes}</p>
+              <p className='text-white md:text-2xl ml-1 mr-3'> Popularity</p>
+              <p className='text-white md:textmd ml-1 '> {movieDetails?.imdbRating}⭐</p>
             </div>
           </div>
         </div>

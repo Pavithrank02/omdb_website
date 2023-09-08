@@ -21,7 +21,7 @@ const MovieInfo = () => {
         {
           movies.listMovie.map(movie => (
             <Link style={{ textDecoration: "none", color: "white" }} to={`/${movie.imdbId}`} >
-              <div className=" mt-5 ml-[40%] h-[40%] w-96 flex justify-center">
+              <div className=" mt-5 ml-[40%] h-[40%] w-96 flex justify-center ">
                 <img
                   className='w-36 h-96'
                   src={`${movie.Poster}`} />
