@@ -1,9 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import Header from './Header'
-import MoviesList from './MoviesList'
-import SearchSuggestion from './SearchSuggestion'
-import SecondaryContainer from './SecondaryContainer'
+import Header from '../components/Header'
+import SearchSuggestion from '../components/SearchSuggestion'
+import SecondaryContainer from '../components/SecondaryContainer'
 
 const Home = () => {
   const showSearch = useSelector(store => store.config.showSearch)
@@ -13,7 +12,6 @@ const Home = () => {
       {showSearch ?
         <>
           <SecondaryContainer />
-
         </>
         :
         <>
@@ -21,7 +19,6 @@ const Home = () => {
           <SecondaryContainer />
         </>
       }
-
     </div>
   )
 }

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 const SearchSuggestion = () => {
   const movieSuggest = useSelector((store) => store.movie?.movieSuggest)
   return (
-    <div className=' ml-32 text-white'>
+    <div className='lg:ml-48 md:ml-20 text-white'>
       <div className='absolute p-4 m-4 mt-0 bg-gray-800 w-3/4 z-10'>
         {movieSuggest && movieSuggest.map((movieName, index) => (
           <div className='flex flex-row p-2 ml-6 border border-gray-500'>
@@ -17,8 +17,8 @@ const SearchSuggestion = () => {
                 alt='movie poster' />
             </div>
             <div>
-            <p className='font=bold text-2xl ml-3'>{movieName.Title}</p>
-            <p className='font=bold text-xl ml-3'>{movieName.Year}</p>
+            <p className='font=bold md:text-2xl ml-3'>{movieName.Title}</p>
+            <p className='font=bold md:text-xl ml-3'>{movieName.Year}</p>
             </div>
           </div>
         ))}

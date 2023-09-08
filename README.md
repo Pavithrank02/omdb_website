@@ -21,6 +21,7 @@
  - movie suggestion added
  - secondary container created
  - react-rating configured
+ - rating package is added
  - rating UI completed
  - comment box created
  - favorites UI completed
@@ -30,6 +31,8 @@
  - useMovieID is used for movie details
  - remove favorites is completed
  - favorites list page completed
+ - pagination completed
+ - responsiveness added into the project
 
 # Features
 

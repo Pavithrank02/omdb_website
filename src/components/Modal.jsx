@@ -1,17 +1,16 @@
 import React, { useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Rating from "react-rating";
 import img1 from '../assets/images/star-empty.png'
 import img2 from '../assets/images/star-full.png'
-import { useDispatch, useSelector } from "react-redux";
 import { addFavorites, removeFavorites } from "../utils/favoriteSlice";
 
 export default function Modal({ id }) {
   const dispatch = useDispatch()
-  const watch = useSelector((store) => store.favorite.favourite)
-  console.log(watch)
-  const list = watch.find(info => info.id == id)
   const [value, setValue] = useState("")
   const [showModal, setShowModal] = React.useState(false);
+  const watch = useSelector((store) => store.favorite.favourite)
+  const list = watch.find(info => info.id === id)
   const searchText = useRef(null)
 
   const handleData = () => {
@@ -29,16 +28,16 @@ export default function Modal({ id }) {
   }
   return (
     <>
-      {list? <button
-            className="bg-red-500 text-black active:bg-yellow-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            type="button"
-            onClick={
-              () => dispatch(removeFavorites(id))
-            }
-          >
-            Remove from Favorites⭐
-          </button> :
-          <button
+      {list ? <button
+        className="bg-red-500 text-black active:bg-yellow-600 font-bold uppercase text-sm px-4 py-3 mr-3 rounded shadow hover:shadow-lg outline-none focus:outline-none  mb-1 ease-linear transition-all duration-150"
+        type="button"
+        onClick={
+          () => dispatch(removeFavorites(id))
+        }
+      >
+        Remove from Favorites⭐
+      </button> :
+        <button
           className="bg-yellow-500 text-black active:bg-yellow-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
           onClick={
@@ -79,8 +78,8 @@ export default function Modal({ id }) {
                         start={0}
                         stop={10}
                         className="flex flex-row mt-3"
-                        emptySymbol={<img src={img1} className="h-8 w-8" />}
-                        fullSymbol={<img src={img2} className="icon" />}
+                        emptySymbol={<img src={img1} className="h-8 w-8" alt="star"/>}
+                        fullSymbol={<img src={img2} className="icon"alt="star" />}
                         onChange={handleClick}
                       />
                     </div>

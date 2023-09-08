@@ -11,19 +11,11 @@ const useMovieInfo = () => {
     getAPI()
   }, [])
 
-  const getAPI = async() => {
+  const getAPI = async () => {
     const data = await fetch(OMDB_MOVIEINFO_API)
     const json = await data.json()
-    // console.log(json)
     dispatch(addMovieInfo(json))
   }
-  
-
-  return (
-    <div>
-      useMovieAPI
-      </div>
-  )
 }
 
 export default useMovieInfo

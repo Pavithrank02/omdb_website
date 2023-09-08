@@ -18,6 +18,6 @@ const movieSlice = createSlice({
   }
 })
 
-export const {addMovie, addMovieInfo, addMovieSuggestion, addMovieDetails} = movieSlice.actions
+export const { addMovie, addMovieInfo, addMovieSuggestion, addMovieDetails } = movieSlice.actions
 
 export default movieSlice.reducer

@@ -1,8 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import Home from './components/Home';
-import WatchList from './components/WatchList';
-import MovieDetails from './components/MovieDetails';
+import Home from './pages/Home';
+import WatchList from './pages/WatchList';
+import MovieDetails from './pages/MovieDetails';
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import Modal from './Modal'
 import { useNavigate } from 'react-router-dom'
+import Modal from './Modal'
 
 const MovieCard = ({ id, title, posterPath }) => {
   const navigate = useNavigate()
@@ -12,7 +12,7 @@ const MovieCard = ({ id, title, posterPath }) => {
   }
 
   return (
-    <div className='mt-3 w-72 pr-4 cursor-pointer  flex flex-col justify-between'>
+    <div className='mt-3 md:w-72 pr-4 cursor-pointer  flex flex-col justify-between'>
       <div className='p-2 w-64 hover:opacity-70 flex object-contain justify-center' onClick={handleRoute}>
         <img
           alt='Movie card'
@@ -20,7 +20,7 @@ const MovieCard = ({ id, title, posterPath }) => {
         />
       </div>
       <div className='flex justify-center'>
-        <Modal id={id}/>
+        <Modal id={id} />
       </div>
     </div>
   )

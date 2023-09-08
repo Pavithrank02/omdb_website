@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import lang from '../utils/languageConstant'
 import { API_KEY, SUPPORTED_LANGUAGES } from '../utils/constants'
 import { changeLanguage, toggleSearch } from '../utils/configSlice'
 import { addMovieSuggestion } from '../utils/movieSlice'
-import { Link, useNavigate } from 'react-router-dom'
 
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
   }
 
   return (
-    <div className=' bg-black '>
+    <div className=' bg-black ml-2'>
       <form className='flex flex-row justify-center' onSubmit={(e) => e.preventDefault()}>
         <button
           className='p-2 m-2  bg-yellow-500 w-16 rounded-md text-xl font-bold cursor-pointer'
@@ -35,7 +35,6 @@ const Header = () => {
         >
           IMDB
         </button>
-
         <input
           ref={searchText}
           className='p-2 m-2 w-[60%] rounded-md'
@@ -51,7 +50,7 @@ const Header = () => {
           {lang[langKey].search}
         </button>
 
-        <p className='text-white p-2 m-2'><Link to="/watchlist"> WatchList</Link></p>
+        <p className='hidden md:block md:text-white md:p-2 md:m-2'><Link to="/watchlist"> WatchList</Link></p>
         <p className='p-2 m-2 text-white'> <select className=' bg-gray-900 text-white' onChange={handleLanguage}>
           {SUPPORTED_LANGUAGES.map((lang) => (
             <option key={lang.identifier} value={lang.identifier}>

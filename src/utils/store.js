@@ -8,7 +8,6 @@ const store = configureStore({
     movie: movieReducer,
     config: configReducer,
     favorite: favoriteReducer,
-
   }
 })
 
