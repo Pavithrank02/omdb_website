@@ -54,9 +54,9 @@ const MovieDetails = () => {
               <p className='text-white md:text-xl ml-1'>Stars: </p>
               <p className='text-white md:text-xl ml-6'>{movieDetails?.Actors}</p>
             </div>
-            <div className='p-1 md:h-24 mt-2 w-full bg-gray-500 border border-slate-400 flex flex-row justify-between align-center '>
+            <div className='p-1 md:h-24 mt-2 w-full bg-gray-500 border border-slate-400 flex flex-row  align-center '>
               <p className='text-white md:text-xl ml-1'>Other Info: </p>
-              <p className='text-white md:text-xl lg:-ml-24'>{movieDetails?.Production}: {movieDetails?.BoxOffice}: {movieDetails?.Country}</p>
+              <p className='text-white md:text-xl ml-3'>{movieDetails?.Production}: {movieDetails?.BoxOffice}: {movieDetails?.Country}</p>
             </div>
           </div>
         </div>
