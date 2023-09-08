@@ -1,24 +1,42 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import useMovieInfo from '../hooks/useMovieInfo'
+import { Carousel } from 'react-responsive-carousel';
+import { Link } from 'react-router-dom';
 
 const MovieInfo = () => {
-  const movieInfo = useSelector((store) => store.movie?.movieInfo)
+  const movies = useSelector(store => store.movie)
+  console.log(movies)
   useMovieInfo()
   return (
-    <div className='text-white mt-5 sm:ml-24 sm:flex-col-12 md:ml-24 lg:ml-36 flex flex-row justify-evenly'>
-      <div className=''>
-        <img
-          className='w-36 mt-3 sm:-ml-10 sm:w-56 sm-colspan-2 md:w-96 '
-          alt='Movie card'
-          src={movieInfo?.Poster}
-        />
-      </div>
-      <div className=' mt-3 md:-ml-10 bg-gray-800 w-1/2 lg:-ml-16 lg:h-72 md:h-96 opacity-50'>
-        <p className='md:text-2xl py-4 p-3'>Title: {movieInfo?.Title}</p>
-        <p className='md:text-lg py-4 p-3'>Released: {movieInfo?.Released}</p>
-        <p className='md:text-xl py-4 p-3 text-justify'>Plot: {movieInfo?.Plot}</p>
-      </div>
+    <div >
+      <Carousel
+        showThumbs={false}
+        autoPlay={true}
+        transitionTime={1}
+        infiniteLoop={true}
+        showStatus={false}
+      >
+        {
+          movies.listMovie.map(movie => (
+            <Link style={{ textDecoration: "none", color: "white" }} to={`/${movie.imdbId}`} >
+              <div className=" mt-5 ml-[40%] h-[40%] w-96 flex justify-center">
+                <img
+                  className='w-36 h-96'
+                  src={`${movie.Poster}`} />
+              </div>
+              <div className="absolute p-20 b-0 h-[70%] flex flex-col  justify-end opacity-1 trasition-opacity-2 hover:opacity-10">
+                <div className="font-bold text-2xl justify-start">{movie ? movie.Title : ""}</div>
+                <div className="text-2xl mb-10 font-bold">
+                  {movie ? movie.Year : ""}
+                </div>
+                {/* <div className="posterImage__description">{movie ? movie.overview : ""}</div> */}
+              </div>
+            </Link>
+          ))
+        }
+      </Carousel>
     </div>
   )
 }

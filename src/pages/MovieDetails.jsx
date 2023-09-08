@@ -12,7 +12,7 @@ const MovieDetails = () => {
   return (
     <div className=''>
       <Header />
-      <div className='md:mx-36 md:w-3/4 lg:ml-36 lg:w-[65%] my-20 bg-slate-800 p-2'>
+      <div className='md:mx-36 md:w-3/4 lg:ml-48 lg:w-[65%] my-20 bg-slate-800 p-2'>
         <div className='flex flex-row justify-between'>
           <div>
             <p className='text-white md:text-2xl ml-1'>{movieDetails?.Title}</p>

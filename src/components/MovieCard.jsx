@@ -13,7 +13,7 @@ const MovieCard = ({ id, title, posterPath }) => {
 
   return (
     <div className='mt-3 md:w-72 pr-4 cursor-pointer  flex flex-col justify-between'>
-      <div className='p-2 w-64 hover:opacity-70 flex object-contain justify-center' onClick={handleRoute}>
+      <div className='p-2 w-64 hover:opacity-50 hover:scale-110 flex object-contain justify-center rounded-lg hover:rounded-lg' onClick={handleRoute}>
         <img
           alt='Movie card'
           src={posterPath}
