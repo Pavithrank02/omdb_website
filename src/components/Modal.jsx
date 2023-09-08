@@ -2,35 +2,51 @@ import React, { useRef, useState } from "react";
 import Rating from "react-rating";
 import img1 from '../assets/images/star-empty.png'
 import img2 from '../assets/images/star-full.png'
-import { useDispatch } from "react-redux";
-import { addFavorites } from "../utils/favoriteSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorites, removeFavorites } from "../utils/favoriteSlice";
 
-export default function Modal({id}) {
+export default function Modal({ id }) {
   const dispatch = useDispatch()
+  const watch = useSelector((store) => store.favorite.favourite)
+  console.log(watch)
+  const list = watch.find(info => info.id == id)
   const [value, setValue] = useState("")
   const [showModal, setShowModal] = React.useState(false);
   const searchText = useRef(null)
 
   const handleData = () => {
-    dispatch(addFavorites({ ratings: value, comments: searchText.current.value, id: id}))
+    dispatch(addFavorites({ ratings: value, comments: searchText.current.value, id: id }))
     alert("added to watch list")
     setShowModal(false)
-   }
 
-   const handleClick = (value) => {
-    console.log(value)
+  }
+
+
+
+  const handleClick = (value) => {
     setValue(value)
-    
-   }
+
+  }
   return (
     <>
-      <button
-        className="bg-yellow-500 text-black active:bg-yellow-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        type="button"
-        onClick={() => setShowModal(true)}
-      >
-        Add To Favorites⭐
-      </button>
+      {list? <button
+            className="bg-red-500 text-black active:bg-yellow-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            type="button"
+            onClick={
+              () => dispatch(removeFavorites(id))
+            }
+          >
+            Remove from Favorites⭐
+          </button> :
+          <button
+          className="bg-yellow-500 text-black active:bg-yellow-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+          onClick={
+            () => setShowModal(true)
+          }
+        >
+          Add to Favorites⭐
+        </button>}
       {showModal ? (
         <>
           <div

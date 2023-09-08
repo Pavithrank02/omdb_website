@@ -28,6 +28,8 @@
  - favorites logic is completed
  - movie details page added
  - useMovieID is used for movie details
+ - remove favorites is completed
+ - favorites list page completed
 
 # Features
 
