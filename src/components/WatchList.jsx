@@ -33,11 +33,11 @@ const WatchList = () => {
                     )
                   }
                 })}
-                <p className='font-bold text-gray-400 text-xl'>Rating: {list.ratings}⭐</p>
+                <p className='font-bold text-gray-400 text-xl'>Your Rating: {list.ratings}⭐</p>
               </div>
               <div className='text-white p-2 m-2 w-96 bg-black'>
-                <p className='font-bold mt-1'>Comments :</p>
-                <p className=''>Comments </p>
+                <p className='font-bold mt-1'>Comments About the Movie :</p>
+                <p className=''>{list.comments} </p>
               </div>
             </div>
           </div>
