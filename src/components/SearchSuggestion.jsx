@@ -13,12 +13,12 @@ const SearchSuggestion = () => {
             <div>
               <img
                 className="w-12"
-                src={movieName.Poster}
+                src={movieName?.Poster}
                 alt='movie poster' />
             </div>
             <div>
-            <p className='font=bold md:text-2xl ml-3'>{movieName.Title}</p>
-            <p className='font=bold md:text-xl ml-3'>{movieName.Year}</p>
+            <p className='font=bold md:text-2xl ml-3'>{movieName?.Title}</p>
+            <p className='font=bold md:text-xl ml-3'>{movieName?.Year}</p>
             </div>
           </div>
         ))}

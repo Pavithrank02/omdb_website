@@ -14,7 +14,7 @@ const Header = () => {
   const langKey = useSelector((store) => store.config.lang)
 
   const handleSearch = async () => {
-    const data = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchText.current.value}&`)
+    const data = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchText.current.value}&`)
     const json = await data.json()
     dispatch(addMovieSuggestion(json.Search))
   }
