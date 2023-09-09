@@ -21,12 +21,12 @@ const MovieInfo = () => {
         {
           movies.listMovie.map(movie => (
             <Link style={{ textDecoration: "none", color: "white" }} to={`/${movie.imdbId}`} >
-              <div className=" mt-5 ml-[40%] h-[40%] w-96 flex justify-center ">
+              <div className=" mt-5 md:ml-[40%] md:h-[40%] md:w-96 flex justify-center ">
                 <img
-                  className='w-36 h-96'
+                  className='w-24 md:w-36 md:h-96'
                   src={`${movie.Poster}`} />
               </div>
-              <div className="absolute p-20 b-0 h-[70%] flex flex-col  justify-end opacity-1 trasition-opacity-2 hover:opacity-10">
+              <div className="absolute p-20 b-0 md:h-[70%] flex flex-col  justify-end opacity-1 trasition-opacity-2 hover:opacity-10">
                 <div className="font-bold text-2xl justify-start">{movie ? movie.Title : ""}</div>
                 <div className="text-2xl mb-10 font-bold">
                   {movie ? movie.Year : ""}
