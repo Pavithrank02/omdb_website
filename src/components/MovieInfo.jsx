@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const MovieInfo = () => {
   const movies = useSelector(store => store.movie)
-  console.log(movies)
   useMovieInfo()
   return (
     <div >

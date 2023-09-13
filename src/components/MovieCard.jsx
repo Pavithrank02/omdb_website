@@ -2,11 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Modal from './Modal'
 
-const MovieCard = ({ id, title, posterPath }) => {
+const MovieCard = ({ id, posterPath }) => {
   const navigate = useNavigate()
 
   const handleRoute = () => {
-    // console.log(id)
     navigate(`${id}`)
 
   }

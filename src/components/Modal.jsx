@@ -19,9 +19,6 @@ export default function Modal({ id }) {
     setShowModal(false)
 
   }
-
-
-
   const handleClick = (value) => {
     setValue(value)
 
